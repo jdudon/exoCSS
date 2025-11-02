@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Index — Corrections des 10 exercices CSS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="base.css">
+  <style>
+    /* ======== Styles spécifiques par exo, sans flex/grid/absolute ======== */
+    /* Exo 1 — Navbar */
+    .navbar-brand{font-weight:700;color:var(--primary)}
+    .navbar ul{list-style:none;margin:0;padding:0}
+    .navbar li{display:inline-block;padding:10px 12px;border-left:1px solid var(--muted)}
+    .navbar li:first-child{border-left:0}
+    .navbar a{font-weight:600}
+
+    /* Exo 2 — Hero */
+    .hero-wrap{background:linear-gradient(180deg,#f5fbfa,#ffffff)}
+    .hero{max-width:720px;margin:0 auto;text-align:center}
+    .hero h1{margin:6px 0 8px}
+
+    /* Exo 3 — Cards produit */
+    .catalogue{font-size:0} /* supprime l'espace entre inline-block */
+    .catalogue .cell{display:inline-block;vertical-align:top;width:32%;padding:16px;font-size:16px}
+    .product-img{background:var(--muted);height:140px;border-radius:12px}
+
+    /* Exo 4 — Formulaire */
+    .form-grid .group{display:inline-block;vertical-align:top;width:49%;padding:12px}
+    @media (max-width:640px){.form-grid .group{width:100%}}
+
+    /* Exo 5 — Pricing table */
+    table{border-collapse:separate;border-spacing:0;width:100%}
+    thead{background:var(--primary-100);color:var(--primary)}
+    th,td{padding:12px}
+    tbody tr:nth-child(even){background:#fbfefe}
+    tbody tr:hover{background:#f2fbf9}
+
+    /* Exo 6 — Media object */
+    .media .thumb{width:160px;height:160px;border-radius:12px;background:var(--muted);margin:8px 16px 8px 8px;float:left}
+    @media (max-width:640px){.media .thumb{float:none;margin:0 0 12px 0;width:100%;height:160px}}
+
+    /* Exo 7 — Footer multi-colonnes */
+    .footer{background:var(--bg)}
+    .footer .col{display:inline-block;vertical-align:top;width:32%;padding:16px}
+    .footer ul{list-style:none;margin:8px 0;padding:0}
+    @media (max-width:640px){.footer .col{width:100%}}
+
+    /* Exo 8 — Breadcrumbs & Pagination */
+    .breadcrumbs{list-style:none;margin:0;padding:8px}
+    .breadcrumbs li{display:inline-block}
+    .sep{padding:0 8px;color:var(--text-soft)}
+    .pagination{margin-top:12px;text-align:center}
+    .pagination a{display:inline-block;padding:12px}
+    .pagination .current{background:var(--primary-100);color:var(--primary);border-radius:999px}
+
+    /* Exo 9 — FAQ */
+    details{border:1px solid var(--muted);border-radius:12px;margin:8px 0;padding:12px;background:#fff}
+    summary{cursor:pointer;font-weight:600}
+    details[open]{background:#fbfefe}
+
+    /* Exo 10 — Navbar responsive (checkbox) */
+    #menu{position:relative;left:-9999px} /* hors écran sans absolute/fixed */
+    .nav{list-style:none;margin:0;padding:0}
+    .nav li{display:inline-block;padding:12px}
+    @media (max-width:640px){
+      #menu ~ .nav{display:none}
+      #menu:checked ~ .nav{display:block}
+      .nav li{display:block}
+    }
+
+    /* Mise en page de cette page index uniquement */
+    body{background:linear-gradient(180deg,#e9f6f3 0%, #f9fdfc 100%) no-repeat fixed;background-size:cover}
+    header{text-align:center;padding:2rem 1rem}
+    header h1{font-size:2rem;color:var(--primary);margin-bottom:.5rem}
+    header p{color:var(--text-soft);max-width:800px;margin:0 auto}
+    .exonum{display:inline-block;padding:.2rem .6rem;border-radius:999px;background:var(--primary-100);color:var(--primary);font-weight:700;margin-right:.5rem}
+    .exodesc{margin-top:0;color:var(--text-soft)}
+    .section{margin-bottom:18px}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Vue d’ensemble des 10 exercices CSS</h1>
+    <p>Cette page affiche le <strong>visuel</strong> de chaque exercice, à la suite, pour offrir une vision d’ensemble des rendus.  
+    Les consignes se trouvent dans le <strong>README</strong> du projet: https://github.com/jdudon/exoCSS</p>
+  </header>
+
+  <main class="page">
+    <!-- ===================== EXO 1 ===================== -->
+    <section class="card section">
+      <h2><span class="exonum">1</span>Navbar horizontale simple</h2>
+      <p class="exodesc">Aligner proprement des liens sur une seule ligne, avec séparateurs et états d’interaction.</p>
+      <nav class="navbar">
+        <div class="ib px16 navbar-brand">Upstream</div>
+        <ul class="ib px16">
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Projets</a></li>
+          <li><a href="#">Événements</a></li>
+          <li><a href="#">Docs</a></li>
+          <li><a href="#">Rapports</a></li>
+        </ul>
+      </nav>
+    </section>
+
+    <!-- ===================== EXO 2 ===================== -->
+    <section class="card section hero-wrap">
+      <h2><span class="exonum">2</span>Bandeau d’accueil (“Hero”)</h2>
+      <div class="hero">
+        <h1>Bienvenue sur votre tableau de bord</h1>
+        <p class="muted">Gérez vos documents, suivez l’avancement de vos projets et planifiez vos prochains événements d’équipe.</p>
+        <a class="btn mt12" href="#">Créer un nouvel événement</a>
+      </div>
+    </section>
+
+    <!-- ===================== EXO 3 ===================== -->
+    <section class="card section">
+      <h2><span class="exonum">3</span>Cards produit (2–3 par ligne)</h2>
+      <div class="catalogue">
+        <div class="cell">
+          <div class="card">
+            <div class="product-img"></div>
+            <h3 class="mt12 mb0">Capteur vent</h3>
+            <p class="muted">Mesure précise du vent</p>
+            <div class="clearfix">
+              <span class="tag float-l">39,90 €</span>
+              <a class="btn float-r" href="#">Ajouter</a>
+            </div>
+          </div>
+        </div>
+        <div class="cell">
+          <div class="card">
+            <div class="product-img"></div>
+            <h3 class="mt12 mb0">Panneau 50W</h3>
+            <p class="muted">Rendement élevé</p>
+            <div class="clearfix">
+              <span class="tag float-l">129,00 €</span>
+              <a class="btn float-r" href="#">Ajouter</a>
+            </div>
+          </div>
+        </div>
+        <div class="cell">
+          <div class="card">
+            <div class="product-img"></div>
+            <h3 class="mt12 mb0">Convertisseur</h3>
+            <p class="muted">12V → 220V pur sinus</p>
+            <div class="clearfix">
+              <span class="tag float-l">89,00 €</span>
+              <a class="btn float-r" href="#">Ajouter</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== EXO 4 ===================== -->
+    <section class="card section">
+      <h2><span class="exonum">4</span>Formulaire d’inscription accessible</h2>
+      <form class="space-y" action="#">
+        <fieldset class="card">
+          <legend style="font-weight:700">Créer un compte</legend>
+          <div class="form-grid">
+            <label class="group">Nom
+              <input class="w-100 mt8" type="text" placeholder="Nom complet" required>
+            </label>
+            <label class="group">Email
+              <input class="w-100 mt8" type="email" placeholder="nom@exemple.com" required>
+            </label>
+            <label class="group">Mot de passe
+              <input class="w-100 mt8" type="password" placeholder="●●●●●●●●" required>
+              <small class="muted">8+ caractères recommandés.</small>
+            </label>
+            <label class="group">Organisation
+              <input class="w-100 mt8" type="text" placeholder="Nom de l’organisation">
+            </label>
+          </div>
+          <label class="p12"><input type="checkbox" class="mt8"> J’accepte les CGU</label>
+          <div class="p12"><button class="btn" type="submit">S’inscrire</button></div>
+        </fieldset>
+      </form>
+    </section>
+
+    <!-- ===================== EXO 5 ===================== -->
+    <section class="card section">
+      <h2><span class="exonum">5</span>Tableau de prix (pricing)</h2>
+      <div class="card">
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align:left">Offre</th>
+              <th>Mensuel</th>
+              <th>Support</th>
+              <th>Stockage</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Basic</td><td>9 €</td><td>Email</td><td>5 Go</td></tr>
+            <tr><td>Pro <span class="tag">Recommandé</span></td><td>19 €</td><td>Email + Chat</td><td>25 Go</td></tr>
+            <tr><td>Business</td><td>49 €</td><td>Dédié</td><td>Illimité</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===================== EXO 6 ===================== -->
+    <section class="card section">
+      <h2><span class="exonum">6</span>Bloc image + texte (media object)</h2>
+      <div class="card media clearfix">
+        <div class="thumb"></div>
+        <h3 class="mb0">Inspection du site</h3>
+        <p class="muted">Compte-rendu et vérifications planifiées avec rappel calendrier. Le contenu se réorganise naturellement sur mobile.</p>
+        <a class="btn" href="#">Lire le rapport</a>
+      </div>
+    </section>
+
+    <!-- ===================== EXO 7 ===================== -->
+    <section class="card section">
+      <h2><span class="exonum">7</span>Footer multi-colonnes</h2>
+      <footer class="card footer">
+        <div class="col">
+          <h3 class="mb0">À propos</h3>
+          <p class="muted">Plateforme de suivi de projets énergie.</p>
+        </div>
+        <div class="col">
+          <h3 class="mb0">Liens</h3>
+          <ul>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">API</a></li>
+            <li><a href="#">Support</a></li>
+          </ul>
+        </div>
+        <div class="col">
+          <h3 class="mb0">Contact</h3>
+          <p class="muted">hello@upstream.example</p>
+        </div>
+      </footer>
+    </section>
+
+    <!-- ===================== EXO 8 ===================== -->
+    <section class="card section">
+      <h2><span class="exonum">8</span>Fil d’Ariane & Pagination</h2>
+      <nav class="card">
+        <ol class="breadcrumbs">
+          <li><a href="#">Accueil</a></li><li class="sep">›</li>
+          <li><a href="#">Projets</a></li><li class="sep">›</li>
+          <li class="muted">Événements</li>
+        </ol>
+        <div class="pagination">
+          <a href="#">Précédent</a>
+          <a class="current" href="#" aria-current="page">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">Suivant</a>
+        </div>
+      </nav>
+    </section>
+
+    <!-- ===================== EXO 9 ===================== -->
+    <section class="card section">
+      <h2><span class="exonum">9</span>FAQ accordéon (CSS-only)</h2>
+      <div class="card">
+        <details open>
+          <summary>Comment planifier une vérification ?</summary>
+          <p class="muted">Ouvrez l’onglet Événements, puis créez la période de vérification.</p>
+        </details>
+        <details>
+          <summary>Puis-je exporter un rapport ?</summary>
+          <p class="muted">Oui, depuis l’onglet Rapports.</p>
+        </details>
+        <details>
+          <summary>Gestion des accès</summary>
+          <p class="muted">Invitez des membres et attribuez des rôles.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- ===================== EXO 10 ===================== -->
+    <section class="card section">
+      <h2><span class="exonum">10</span>Navbar responsive (CSS-only)</h2>
+      <div class="card">
+        <label for="menu" class="btn">Menu</label>
+        <input id="menu" type="checkbox" />
+        <ul class="nav mt12">
+          <li><a href="#">Vue d’ensemble</a></li>
+          <li><a href="#">Activité</a></li>
+          <li><a href="#">Inventaire</a></li>
+          <li><a href="#">Événements</a></li>
+          <li><a href="#">Documents</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page" style="text-align:center;color:var(--text-soft);font-size:.9rem;padding-top:0">
+    <p>© 2025 — Vue d’ensemble des corrections. Projet pédagogique “sans flex / sans grid / sans absolute”.</p>
+  </footer>
+</body>
+</html>
