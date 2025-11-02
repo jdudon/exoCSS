@@ -1,0 +1,11 @@
+.form-grid .group {
+  display: inline-block;
+  vertical-align: top;
+  width: 49%;
+  padding: 12px;
+}
+@media (max-width: 640px) {
+  .form-grid .group {
+    width: 100%;
+  }
+}

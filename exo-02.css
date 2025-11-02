@@ -1,0 +1,11 @@
+.hero-wrap {
+  background: linear-gradient(180deg, #f5fbfa, #ffffff);
+}
+.hero {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+.hero h1 {
+  margin: 6px 0 8px;
+}
