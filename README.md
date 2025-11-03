@@ -190,3 +190,22 @@
 ![exo 10- Navbar Toggle](assets/exo10_2.png)
 
 
+## Charte graphique (environ)
+
+ ### Couleur
+  --bg: #ecf7f5;
+  --muted: #e8f1ef;
+  --text: #0f1b1a;
+  --text-soft: #425a58;
+  --primary: #0f766e;
+  --primary-700: #0c5f59;
+  --primary-100: #e0f2f1;
+  --accent: #22c5ac;
+  --warning: #f59e0b;
+  --radius: 16px;
+  --shadow: 0 6px 18px rgba(15, 118, 110, 0.1);
+
+### Polices
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+
