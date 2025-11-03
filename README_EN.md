@@ -6,7 +6,7 @@
 **Instructions:**
 * Create a navigation bar at the top with a text logo and 5 links.  
 * Display the links side by side instead of stacked vertically.  
-* Add some spacing between links (using margins).  
+* Add some spacing between links (using margins for example).  
 * Optionally separate links with a left border.  
 * Add visible effects on `:hover` and `:focus` states.  
 

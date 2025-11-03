@@ -6,7 +6,7 @@
 **Consignes :**
 * Crée un élément principal (comme un conteneur) qui contiendra la navigation.  
 * Ajoute un élément pour le logo (texte simple).  
-* Ajoute ensuite 5 liens de navigation dans une liste (ou côte à côte).  
+* Ajoute ensuite 5 liens de navigation dans une liste.  
 * Trouve comment afficher les liens côte à côte au lieu les uns sous les autres.  
 * Ajoute un espace entre les liens (par exemple en donnant une marge).  
 * Ajoute un effet visuel quand on passe la souris sur un lien (changement de couleur, soulignement, etc.).  
